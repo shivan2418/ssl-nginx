@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     web:
-        image: nginx:12.16.2
+        image: nginx:1.21.6
         restart: always
         volumes:
             - ./public:/var/www/html
