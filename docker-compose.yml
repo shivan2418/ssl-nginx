@@ -14,8 +14,10 @@ services:
 
     certbot:
         image: certbot/certbot:v1.23.0
-        command: certonly --webroot --webroot-path=/var/www/certbot --email shivan@shivan.dk --agree-tos --no-eff-email -d newnormalanalysis.xyz
+        command: certonly --webroot --webroot-path=/var/www/certbot --email email@example.com --agree-tos --no-eff-email --force-renewal -d example.com
         volumes:
             - ./certbot/conf:/etc/letsencrypt
             - ./certbot/logs:/var/log/letsencrypt
             - ./certbot/data:/var/www/certbot
+        depends_on:
+            -   web
